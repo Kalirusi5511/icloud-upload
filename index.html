@@ -11,9 +11,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
         }
         .container {
             background-color: white;
@@ -21,7 +23,7 @@
             border-radius: 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             max-width: 350px;
-            width: 90%;
+            width: 100%;
         }
         h1 {
             font-size: 22px;
@@ -31,7 +33,7 @@
         p {
             font-size: 16px;
             color: #636366;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             line-height: 1.4;
         }
         .btn {
@@ -44,9 +46,23 @@
             font-size: 18px;
             font-weight: bold;
             transition: background-color 0.2s;
+            margin-bottom: 15px;
         }
         .btn:active {
             background-color: #005bb5;
+        }
+        .fallback-text {
+            font-size: 13px;
+            color: #8e8e93;
+            margin-top: 20px;
+            border-top: 1px solid #e5e5ea;
+            padding-top: 15px;
+        }
+        .fallback-link {
+            color: #007aff;
+            word-break: break-all;
+            font-size: 12px;
+            user-select: all; /* Macht es einfach, den Text zu markieren */
         }
     </style>
 </head>
@@ -54,10 +70,17 @@
 
     <div class="container">
         <h1>Restart Kurzbefehl</h1>
-        <p>Tippe auf den Button unten, um den Kurzbefehl zu deinem iPhone hinzuzufügen.</p>
+        <p>Tippe auf den Button unten, um den Kurzbefehl direkt in der App zu öffnen.</p>
         
-        <!-- Der perfekte Raw-Link ist hier eingebaut -->
-        <a href="shortcuts://import-shortcut?url=https://github.com/Kalirusi5511/icloud-upload/raw/refs/heads/main/Restart.shortcut" class="btn">Kurzbefehl hinzufügen</a>
+        <!-- Der direkte App-Öffnen-Link mit dem funktionierenden Raw-Link -->
+        <a href="shortcuts://import-shortcut?url=https://raw.githubusercontent.com/Kalirusi5511/icloud-upload/main/Restart.shortcut" class="btn">Kurzbefehl hinzufügen</a>
+        
+        <div class="fallback-text">
+            <strong>Klappt der Button nicht?</strong><br>
+            Kopiere diesen Text und füge ihn oben in die <b>Safari-Adressleiste</b> ein:
+            <br><br>
+            <span class="fallback-link">shortcuts://import-shortcut?url=https://raw.githubusercontent.com/Kalirusi5511/icloud-upload/main/Restart.shortcut</span>
+        </div>
     </div>
 
 </body>
